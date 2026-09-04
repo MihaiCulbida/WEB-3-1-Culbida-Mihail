@@ -4,6 +4,10 @@ html, body {
     font-family: Arial, sans-serif;
 }
 
+body {
+    background-color: #adc3ff;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
