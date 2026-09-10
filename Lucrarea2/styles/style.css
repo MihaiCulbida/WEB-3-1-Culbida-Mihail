@@ -95,3 +95,21 @@ body {
 .norvegia-albastru { 
     background-color: #00205B; 
 }
+
+.steag-suedia {
+    border-collapse: collapse;
+    margin: 15px;
+}
+
+.steag-suedia td {
+    width: 30px;
+    height: 20px;
+    padding: 0;
+}
+
+.suedia-albastru { 
+    background-color: #005293; 
+}
+.suedia-galben { 
+    background-color: #FECC02; 
+}
