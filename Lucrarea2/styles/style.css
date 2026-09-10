@@ -113,3 +113,10 @@ body {
 .suedia-galben { 
     background-color: #FECC02; 
 }
+
+#footer {
+    background-color: #5683ff;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
