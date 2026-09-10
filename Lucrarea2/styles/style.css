@@ -39,6 +39,10 @@ body {
     margin-bottom: 30px;
 }
 
+.tara p {
+    max-width: 700px;
+}
+
 .steag {
     border-collapse: collapse;
     margin: 15px;
