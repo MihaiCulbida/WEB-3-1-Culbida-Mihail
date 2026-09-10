@@ -34,3 +34,37 @@ body {
 #continut {
     padding: 5px;
 }
+
+.tara {
+    margin-bottom: 30px;
+}
+
+.steag {
+    border-collapse: collapse;
+    margin: 15px;
+}
+
+.steag td {
+    width: 30px;
+    height: 20px;
+    padding: 0;
+}
+
+.moldova-albastru { 
+    background-color: #003DA5; 
+}
+
+.moldova-galben {
+    background-color: #FFD200;
+    vertical-align: middle;
+}
+
+.moldova-galben img {
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+}
+
+.moldova-rosu { 
+    background-color: #CE1126; 
+}
