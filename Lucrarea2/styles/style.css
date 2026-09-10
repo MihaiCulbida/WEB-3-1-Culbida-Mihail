@@ -1,0 +1,36 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#header {
+    background-color: #5683ff;
+    padding: 0;
+}
+
+#meniu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+#meniu .logo {
+    color: white;
+    font-size: 24px;
+    margin: 0;
+}
+
+#meniu nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+#meniu nav a:hover {
+    text-decoration: underline;
+}
+
+#continut {
+    padding: 5px;
+}
