@@ -72,3 +72,26 @@ body {
 .moldova-rosu { 
     background-color: #CE1126; 
 }
+
+.steag-norvegia {
+    border-collapse: collapse;
+    margin: 15px;
+}
+
+.steag-norvegia td {
+    width: 30px;
+    height: 20px;
+    padding: 0;
+}
+
+.norvegia-rosu     { 
+    background-color: #BA0C2F; 
+}
+
+.norvegia-alb      { 
+    background-color: #ffffff; 
+}
+
+.norvegia-albastru { 
+    background-color: #00205B; 
+}
