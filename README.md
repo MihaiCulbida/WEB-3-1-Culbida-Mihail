@@ -1,2 +1,2 @@
 # ProgramareaClientSide
-123
+5 lucrări de laborator în timpul cursului Programarea client-side
