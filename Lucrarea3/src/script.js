@@ -115,3 +115,10 @@ document.getElementById("btnFoarfeca").addEventListener("click", function () {
     playRound("foarfeca");
 });
 
+document.getElementById("btnModal").addEventListener("click", function () {
+    document.getElementById("modal").style.display = "none";
+    gameScore.player = 0;
+    gameScore.computer = 0;
+    gameScore.draws = 0;
+    gameScore.displayScore();
+});
