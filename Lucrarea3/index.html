@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Laboratorul 3</title>
+    <link href="styles/style.css" rel="stylesheet">
 </head>
 <body>
     <h1>Piatra, Hartia, Foarfeca</h1>
+
+    <div id="joc">
+        <div id="stanga">
+            <div class="zona">
+                <h2>Calculator</h2>
+                <img id="imgCalculator" style="display: none;">
+                <p id="textCalculator">-</p>
+            </div>
+            <div class="zona">
+                <p id="rezultat">Alege</p>
+            </div>
+
+            <div class="zona">
+                <h2>Tu</h2>
+                <img id="imgJucator" style="display: none;">
+                <p id="textJucator">-</p>
+
+                <button id="btnPiatra">Piatra</button>
+                <button id="btnHartia">Hârtia</button>
+                <button id="btnFoarfeca">Foarfeca</button>
+            </div>
+        </div>
+
+        <div id="dreapta">
+            <div class="scor">
+                <img src="img/computer.png" alt="Calculator">
+                <p id="scorCalculator">0</p>
+            </div>
+            <div class="scor">
+                <img src="img/draw.png" alt="Egalitate">
+                <p id="scorEgalitati">0</p>
+            </div>
+            <div class="scor">
+                <img src="img/player.png" alt="Jucător">
+                <p id="scorJucator">0</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal">
+        <div id="modalContinut">
+            <p id="modalText"></p>
+            <button id="btnModal">OK</button>
+        </div>
+    </div>
+
     <script src="src/script.js"></script>
 </body>
 </html>
