@@ -33,6 +33,16 @@ body {
     font-weight: bold;
     margin: 5px 0;
 }
+.scor {
+    position: relative;
+}
+#mesajCalculator {
+    display: none;
+    position: absolute;
+    bottom: 80%;
+    left: 65%;
+    width: 90px;
+}
 #modal {
     display: none;
     position: fixed;

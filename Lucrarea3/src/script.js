@@ -75,9 +75,13 @@ function getWinner(userChoice, computerChoice) {
 }
 
 function checkWinner() {
+    const mesaj = document.getElementById("mesajCalculator");
+
     if (gameScore.player === 5) {
+        mesaj.style.display = "none";
         showModal("Tu ai acumulat 5 puncte!");
     } else if (gameScore.computer === 5) {
+        mesaj.style.display = "block";
         showModal("Calculatorul a acumulat 5 puncte!");
     }
 }
