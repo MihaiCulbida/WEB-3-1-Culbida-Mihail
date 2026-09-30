@@ -9,15 +9,19 @@ function afiseazaProduse() {
 }
 
 btnAdaugaSfarsit.addEventListener("click", function () {
-    produse.push(inputProdus.value);
-    inputProdus.value = "";
-    afiseazaProduse();
+    if (inputProdus.value.trim() !== "") {
+        produse.push(inputProdus.value);
+        inputProdus.value = "";
+        afiseazaProduse();
+    }
 });
 
 btnAdaugaInceput.addEventListener("click", function () {
-    produse.unshift(inputProdus.value);
-    inputProdus.value = "";
-    afiseazaProduse();
+    if (inputProdus.value.trim() !== "") {
+        produse.unshift(inputProdus.value);
+        inputProdus.value = "";
+        afiseazaProduse();
+    }
 });
 
 btnStergePrimul.addEventListener("click", function () {
