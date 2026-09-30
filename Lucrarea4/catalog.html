@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Catalog electronic</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        #btnMutare {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <a id="btnMutare" href="cumparaturi.html">Cumparaturi</a>
+    <h2>Catalog electronic</h2>
+
+    <p id="numarElevi"></p>
+    <div id="catalog"></div>
+
+    <h3>Adauga elev</h3>
+    <input type="text" id="inputNume" placeholder="Nume Prenume">
+    <input type="number" id="inputVarsta" placeholder="Varsta">
+    <input type="number" id="inputNota" placeholder="Nota">
+    <button id="btnAdaugaElev">Adauga elev</button>
+
+    <h3>Sterge elev</h3>
+    <input type="text" id="inputNumeStergere" placeholder="Nume Prenume elevului">
+    <button id="btnStergeElev">Sterge elev</button>
+
+    <h3>Cauta elev</h3>
+    <input type="text" id="inputNumeCautare" placeholder="Nume Prenume elevului">
+    <button id="btnCautaElev">Cauta</button>
+    <p id="rezultatCautare"></p>
+
+    <script src="src/script2.js"></script>
+</body>
+</html>
