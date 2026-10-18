@@ -83,3 +83,6 @@ btnAlignCenter.addEventListener("click", () => cardContainer.style.alignItems = 
 btnAlignEnd.addEventListener("click", () => cardContainer.style.alignItems = "flex-end");
 btnStretch.addEventListener("click", () => cardContainer.style.alignItems = "stretch");
 
+btnWrap.addEventListener("click", () => cardContainer.style.flexWrap = "wrap");
+btnNowrap.addEventListener("click", () => cardContainer.style.flexWrap = "nowrap");
+
