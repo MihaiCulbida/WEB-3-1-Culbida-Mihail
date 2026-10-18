@@ -6,9 +6,23 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <h2>Lista studenti</h2>
+    <div id="pagina">
 
-    <h3>Adauga student</h3>
+        <div id="stanga">
+            <h3>Adauga student</h3>
+            <input type="text" id="inputNume" placeholder="Nume"> <br>
+            <input type="text" id="inputGrupa" placeholder="Grupa"> <br>
+            <input type="number" id="inputVarsta" placeholder="Varsta"> <br>
+            <input type="text" id="inputAvatar" placeholder="link Avatar"> <br>
+            <button id="btnAdauga">Adauga student</button>
+            <p id="eroare"></p>
+
+
+        <div id="dreapta">
+            <div id="cardContainer"></div>
+        </div>
+
+    </div>
 
     <script src="src/script.js"></script>
 </body>
