@@ -23,3 +23,15 @@ body {
     height: 100%;
 }
 
+.card {
+    border: 1px solid gray;
+    width: 140px;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 40px;
+}
