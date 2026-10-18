@@ -69,3 +69,17 @@ function stergeStudent(id) {
 
     afiseazaStudenti();
 }
+
+
+btnStart.addEventListener("click", () => cardContainer.style.justifyContent = "flex-start");
+btnCenter.addEventListener("click", () => cardContainer.style.justifyContent = "center");
+btnEnd.addEventListener("click", () => cardContainer.style.justifyContent = "flex-end");
+btnBetween.addEventListener("click", () => cardContainer.style.justifyContent = "space-between");
+btnAround.addEventListener("click", () => cardContainer.style.justifyContent = "space-around");
+btnEvenly.addEventListener("click", () => cardContainer.style.justifyContent = "space-evenly");
+
+btnAlignStart.addEventListener("click", () => cardContainer.style.alignItems = "flex-start");
+btnAlignCenter.addEventListener("click", () => cardContainer.style.alignItems = "center");
+btnAlignEnd.addEventListener("click", () => cardContainer.style.alignItems = "flex-end");
+btnStretch.addEventListener("click", () => cardContainer.style.alignItems = "stretch");
+
