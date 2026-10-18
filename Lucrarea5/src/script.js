@@ -86,3 +86,6 @@ btnStretch.addEventListener("click", () => cardContainer.style.alignItems = "str
 btnWrap.addEventListener("click", () => cardContainer.style.flexWrap = "wrap");
 btnNowrap.addEventListener("click", () => cardContainer.style.flexWrap = "nowrap");
 
+inputGap.addEventListener("input", function () {
+    cardContainer.style.gap = inputGap.value + "px";
+});
