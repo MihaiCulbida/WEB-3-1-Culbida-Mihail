@@ -4,13 +4,30 @@ const cardContainer = document.getElementById("cardContainer");
 const numarElevi = document.getElementById("numarElevi");
 const inputCauta = document.getElementById("inputCauta");
 const btnCauta = document.getElementById("btnCauta");
+const modal = document.getElementById("modal");
+const formEdit = document.getElementById("formEdit");
+const eroareEdit = document.getElementById("eroareEdit");
+const btnAnuleaza = document.getElementById("btnAnuleaza");
 
 let cautare = "";
-
+let idEditat = null;
 let elevi = JSON.parse(localStorage.getItem("elevi")) || [];
 
 function salvare() {
     localStorage.setItem("elevi", JSON.stringify(elevi));
+}
+
+function validare(nume, varsta, grupa, email) {
+    if (nume === "" || varsta === "" || grupa === "" || email === "") {
+        return "Careva input e gol";
+    }
+    if (isNaN(varsta) || Number(varsta) <= 0) {
+        return "Varsta trebuie să fie > 0";
+    }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        return "Emailul nu e valid";
+    }
+    return "";
 }
 
 function afisare() {
@@ -31,7 +48,10 @@ function afisare() {
             <p>Varsta: ${elev.varsta}</p>
             <p>Grupa: ${elev.grupa}</p>
             <p class="break-all">Email: ${elev.email}</p>
-            <button data-id="${elev.id}" class="bg-red-600 text-white rounded px-3 py-1 mt-2">Șterge</button>
+            <div class="flex gap-2 mt-2">
+                <button data-id="${elev.id}" data-actiune="edit" class="bg-gray-400 text-white rounded px-3 py-1">Edit</button>
+                <button data-id="${elev.id}" data-actiune="sterge" class="bg-red-600 text-white rounded px-3 py-1">Șterge</button>
+            </div>
         </div>
     `).join("");
 }
@@ -43,16 +63,9 @@ form.addEventListener("submit", function (event) {
     const grupa = document.getElementById("inputGrupa").value.trim();
     const email = document.getElementById("inputEmail").value.trim();
 
-    if (nume === "" || varsta === "" || grupa === "" || email === "") {
-        eroare.textContent = "Careva input e gol";
-        return;
-    }
-    if (isNaN(varsta) || Number(varsta) <= 0) {
-        eroare.textContent = "Varsta trebuie să fie > 0";
-        return;
-    }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        eroare.textContent = "Emailul nu e valid";
+    const mesaj = validare(nume, varsta, grupa, email);
+    if (mesaj !== "") {
+        eroare.textContent = mesaj;
         return;
     }
 
@@ -64,13 +77,53 @@ form.addEventListener("submit", function (event) {
 });
 
 cardContainer.addEventListener("click", function (event) {
-    if (event.target.tagName !== "BUTTON") {
+    const id = Number(event.target.dataset.id);
+    const actiune = event.target.dataset.actiune;
+
+    if (actiune === "sterge") {
+        elevi = elevi.filter(elev => elev.id !== id);
+        salvare();
+        afisare();
+    }
+
+    if (actiune === "edit") {
+        const elev = elevi.find(elev => elev.id === id);
+        idEditat = id;
+        document.getElementById("editNume").value = elev.nume;
+        document.getElementById("editVarsta").value = elev.varsta;
+        document.getElementById("editGrupa").value = elev.grupa;
+        document.getElementById("editEmail").value = elev.email;
+        eroareEdit.textContent = "";
+        modal.classList.remove("hidden");
+    }
+});
+
+formEdit.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const nume = document.getElementById("editNume").value.trim();
+    const varsta = document.getElementById("editVarsta").value.trim();
+    const grupa = document.getElementById("editGrupa").value.trim();
+    const email = document.getElementById("editEmail").value.trim();
+
+    const mesaj = validare(nume, varsta, grupa, email);
+    if (mesaj !== "") {
+        eroareEdit.textContent = mesaj;
         return;
     }
-    const id = Number(event.target.dataset.id);
-    elevi = elevi.filter(elev => elev.id !== id);
+
+    const elev = elevi.find(elev => elev.id === idEditat);
+    elev.nume = nume;
+    elev.varsta = Number(varsta);
+    elev.grupa = grupa;
+    elev.email = email;
+
     salvare();
     afisare();
+    modal.classList.add("hidden");
+});
+
+btnAnuleaza.addEventListener("click", function () {
+    modal.classList.add("hidden");
 });
 
 btnCauta.addEventListener("click", function () {
