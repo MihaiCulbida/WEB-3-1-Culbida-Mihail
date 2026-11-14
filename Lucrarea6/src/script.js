@@ -2,6 +2,8 @@ const form = document.getElementById("formElev");
 const eroare = document.getElementById("eroare");
 const cardContainer = document.getElementById("cardContainer");
 const numarElevi = document.getElementById("numarElevi");
+const inputCauta = document.getElementById("inputCauta");
+const btnCauta = document.getElementById("btnCauta");
 
 let cautare = "";
 
@@ -15,6 +17,13 @@ function afisare() {
     numarElevi.textContent = "Elevi pe lista [" + elevi.length + "]";
 
     const lista = elevi.filter(elev => elev.nume.toLowerCase().includes(cautare));
+
+    if (lista.length === 0) {
+        cardContainer.innerHTML = elevi.length === 0
+            ? "<p>Nui nimeni in catalog</p>"
+            : "<p>Nu exista asa elev</p>";
+        return;
+    }
 
     cardContainer.innerHTML = lista.map(elev => `
         <div class="bg-white p-4 rounded w-64">
@@ -61,6 +70,11 @@ cardContainer.addEventListener("click", function (event) {
     const id = Number(event.target.dataset.id);
     elevi = elevi.filter(elev => elev.id !== id);
     salvare();
+    afisare();
+});
+
+btnCauta.addEventListener("click", function () {
+    cautare = inputCauta.value.trim().toLowerCase();
     afisare();
 });
 

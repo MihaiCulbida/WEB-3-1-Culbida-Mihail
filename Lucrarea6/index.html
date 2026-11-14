@@ -10,7 +10,13 @@
 <body class="bg-gray-100 p-4">
     <main class="max-w-4xl mx-auto">
         <h1 class="text-2xl font-bold mb-2">Catalog </h1>
-        <p id="numarElevi" class="mb-4"></p>
+        <div class="flex justify-between items-center mb-4">
+            <p id="numarElevi"></p>
+            <div class="flex items-center bg-white border border-gray-300 rounded">
+                <input type="text" id="inputCauta" placeholder="Cautare" class="p-2 rounded outline-none">
+                <img id="btnCauta" src="img/search.png" class="w-4 h-4 mr-3 cursor-pointer">
+            </div>
+        </div>
 
         <form id="formElev" class="bg-white p-4 rounded mb-4 flex flex-wrap gap-3" novalidate>
             <input type="text" id="inputNume" placeholder="Nume" class="border border-gray-300 rounded p-2 flex-1 min-w-32">
@@ -18,7 +24,7 @@
             <input type="text" id="inputGrupa" placeholder="Grupa" class="border border-gray-300 rounded p-2 flex-1 min-w-32">
             <input type="email" id="inputEmail" placeholder="Email" class="border border-gray-300 rounded p-2 flex-1 min-w-32">
             <button type="submit" class="bg-green-500 text-white rounded px-3">Adauga elev</button>
-            <p id="eroare" class="text-red-500"></p>
+            <p id="eroare" class="text-red-500 w-full"></p>
         </form>
 
         <div id="cardContainer" class="flex flex-wrap gap-3"></div>
